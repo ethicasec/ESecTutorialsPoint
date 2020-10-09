@@ -1,6 +1,6 @@
+import '../DropDownWithArrary/dropdownwitharray.dart';
 import 'package:flutter/material.dart';
 // import '../UrlLauncher/urllauncher.dart';
-// import 'DropDownWithArrary/dropdownwitharray.dart';
 import '../Welcome/esecwelcome.dart';
 
 class ESecTutorialsList {
@@ -14,8 +14,8 @@ class ESecTutorialRoutes extends StatelessWidget {
   List<ESecTutorialsList> esecTutList = [
     ESecTutorialsList(
         page: "EthicaUrlLauncher", pageTitle: "Url Launcher Tutorial"),
-    // ESecTutorialsList(
-    //     page: "DropDownWithArray", pageTitle: "DropDownWithArray Tutorial"),
+    ESecTutorialsList(
+        page: "DropDownWithArray", pageTitle: "DropDownWithArray Tutorial"),
     // ESecTutorialsList(page: "DropDownWith", pageTitle: "DropDownWithArray "),
   ];
 
@@ -26,8 +26,8 @@ class ESecTutorialRoutes extends StatelessWidget {
         switch (page) {
           // case "EthicaUrlLauncher":
           //   return EthicaUrlLauncher(title: title);
-          // case "DropDownWithArray":
-          //   return DropDownWithArray(title: title);
+          case "DropDownWithArray":
+            return DropDownWithArray(title: title);
           default:
             return ESecWelcome(title: "ESec Tutorial");
         }
