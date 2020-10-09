@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-// import '../UrlLauncher/urllauncher.dart';
+import '../UrlLauncher/urllauncher.dart';
 // import 'DropDownWithArrary/dropdownwitharray.dart';
 import '../Welcome/esecwelcome.dart';
 
@@ -24,8 +24,8 @@ class ESecTutorialRoutes extends StatelessWidget {
       context,
       MaterialPageRoute(builder: (context) {
         switch (page) {
-          // case "EthicaUrlLauncher":
-          //   return EthicaUrlLauncher(title: title);
+          case "EthicaUrlLauncher":
+            return EthicaUrlLauncher(title: title);
           // case "DropDownWithArray":
           //   return DropDownWithArray(title: title);
           default:
