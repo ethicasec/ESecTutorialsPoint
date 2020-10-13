@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../Welcome/esecwelcome.dart';
-import '../UrlLauncher/urllauncher.dart';
-import '../DropDownWithArray/dropdownwitharry.dart';
+import '../Tutorials/UrlLauncher/urllauncher.dart';
+import '../Tutorials/DropDownWithArray/dropdownwitharry.dart';
 
 class ESecTutorialsList {
   String page;
