@@ -1,4 +1,4 @@
-import '../DropDownWithArrary/dropdownwitharray.dart';
+import 'package:esectutorialspoint/DropDownWithArray/dropdownwitharry.dart';
 import 'package:flutter/material.dart';
 import '../UrlLauncher/urllauncher.dart';
 import '../Welcome/esecwelcome.dart';
@@ -12,11 +12,11 @@ class ESecTutorialsList {
 // ignore: must_be_immutable
 class ESecTutorialRoutes extends StatelessWidget {
   List<ESecTutorialsList> esecTutList = [
+    ESecTutorialsList(page: "Welcome", pageTitle: "Welcome to ESec"),
     ESecTutorialsList(
-        page: "EthicaUrlLauncher", pageTitle: "Url Launcher Tutorial"),
+        page: "EthicaUrlLauncher", pageTitle: "Tutorial: Url Launcher"),
     ESecTutorialsList(
-        page: "DropDownWithArray", pageTitle: "DropDownWithArray Tutorial"),
-    // ESecTutorialsList(page: "DropDownWith", pageTitle: "DropDownWithArray "),
+        page: "DropDownWithArray", pageTitle: "Tutorial: DropDownWithArray "),
   ];
 
   void switchToTutePage(BuildContext context, String page, String title) {
@@ -24,12 +24,14 @@ class ESecTutorialRoutes extends StatelessWidget {
       context,
       MaterialPageRoute(builder: (context) {
         switch (page) {
-          case "DropDownWithArray":
-            return DropDownWithArray(title: title);
+          case "Welcome":
+            return ESecWelcome(title: title);
           case "EthicaUrlLauncher":
             return EthicaUrlLauncher(title: title);
+          case "DropDownWithArray":
+            return DropDownWithArray(title: title);
           default:
-            return ESecWelcome(title: "ESec Tutorial");
+            return ESecWelcome(title: "Ethica Security");
         }
       }),
     );
