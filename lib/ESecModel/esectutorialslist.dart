@@ -21,9 +21,11 @@ class ESecTutorialRoutes extends StatelessWidget {
         page: "DropDownWithArray", pageTitle: "DropDownWithArray "),
     ESecTutorialsList(
         page: "FloatingRoundButton", pageTitle: "Floating Round Button"),
-    ESecTutorialsList(page: "FoldingCellSingle", pageTitle: "Folding Cell"),
     ESecTutorialsList(
-        page: "FoldingCellWithListView", pageTitle: "Folding Cell"),
+        page: "FoldingCellSingle", pageTitle: "Single FoldingCell"),
+    ESecTutorialsList(
+        page: "FoldingCellWithListView",
+        pageTitle: "FoldingCell With ListView"),
   ];
 
   void switchToTutePage(BuildContext context, String page, String title) {

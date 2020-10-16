@@ -111,7 +111,7 @@ class FoldingCellWithListView extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Expanded(
                     flex: 1,
@@ -130,10 +130,9 @@ class FoldingCellWithListView extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Container(
-                            // color: Colors.green,
                             height: 100,
                             child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 dataRow(Icons.phone, "+91-1234567890"),
@@ -171,20 +170,33 @@ class FoldingCellWithListView extends StatelessWidget {
   }
 
   Widget cardTitle(int index) {
-    return Container(
-      height: 80,
-      child: Center(
-        child: Text(
-          "Card ${index + 1}",
-          style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        Center(
+          child: Image(
+              image: AssetImage("assets/icons/ethicasec.png"), height: 80),
         ),
-      ),
+        Container(
+          width: 1,
+          height: 50,
+          color: Colors.grey[600],
+        ),
+        Container(
+          child: Center(
+            child: Text(
+              "Card ${index + 1}",
+              style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+            ),
+          ),
+        ),
+      ],
     );
   }
 
   Widget cardMiddleLine() {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 30),
+      padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
       child: Container(
         height: 3,
         color: Colors.teal[900],
