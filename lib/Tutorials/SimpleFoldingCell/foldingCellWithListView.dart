@@ -3,10 +3,10 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:folding_cell/folding_cell.dart';
 
-class MultiFoldingCell extends StatelessWidget {
+class FoldingCellWithListView extends StatelessWidget {
   final String title;
 
-  MultiFoldingCell({Key key, this.title}) : super(key: key);
+  FoldingCellWithListView({Key key, this.title}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -3,8 +3,8 @@ import '../Welcome/esecwelcome.dart';
 import '../Tutorials/UrlLauncher/urllauncher.dart';
 import '../Tutorials/DropDownWithArray/dropdownwitharry.dart';
 import '../Widgets/FloatingRoundButton/roundmultibutton.dart';
-import '../Tutorials/SimpleFoldingCell/simplefoldcelsingle.dart';
-import '../Tutorials/SimpleFoldingCell/simplefoldcellwidget.dart';
+import '../Tutorials/SimpleFoldingCell/simpleFoldingCell.dart';
+import '../Tutorials/SimpleFoldingCell/foldingCellWithListView.dart';
 
 class ESecTutorialsList {
   String page;
@@ -21,9 +21,9 @@ class ESecTutorialRoutes extends StatelessWidget {
         page: "DropDownWithArray", pageTitle: "DropDownWithArray "),
     ESecTutorialsList(
         page: "FloatingRoundButton", pageTitle: "Floating Round Button"),
+    ESecTutorialsList(page: "FoldingCellSingle", pageTitle: "Folding Cell"),
     ESecTutorialsList(
-        page: "SingleFoldingCell", pageTitle: "SingleFoldingCell"),
-    ESecTutorialsList(page: "MultiFoldingCell", pageTitle: "MultiFoldingCell"),
+        page: "FoldingCellWithListView", pageTitle: "Folding Cell"),
   ];
 
   void switchToTutePage(BuildContext context, String page, String title) {
@@ -39,10 +39,10 @@ class ESecTutorialRoutes extends StatelessWidget {
             return DropDownWithArray(title: title);
           case "FloatingRoundButton":
             return RoundedButton(title: title);
-          case "SingleFoldingCell":
+          case "FoldingCellSingle":
             return SingleFoldingCell(title: title);
-          case "MultiFoldingCell":
-            return MultiFoldingCell(title: title);
+          case "FoldingCellWithListView":
+            return FoldingCellWithListView(title: title);
           default:
             return ESecWelcome(title: "Ethica Security");
         }
