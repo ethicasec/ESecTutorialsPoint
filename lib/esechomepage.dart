@@ -34,8 +34,8 @@ class _ESecHomePageState extends State<ESecHomePage> {
                 elevation: 2,
                 child: ListTile(
                   leading: FlutterLogo(),
-                  title:
-                      Text("ESec-${index + 1}: ${data.pageTitle.toString()}"),
+                  title: Text(
+                      "Tutorial-${index + 1}: ${data.pageTitle.toString()}"),
                   onTap: () {
                     _tutorials.switchToTutePage(
                         context, data.page, data.pageTitle);
