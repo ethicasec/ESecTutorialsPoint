@@ -16,7 +16,7 @@ class FoldingCellWithListView extends StatelessWidget {
         centerTitle: true,
       ),
       body: Container(
-        color: Color(0xFF2e282a),
+        color: Colors.grey[800],
         child: ListView.builder(
           itemCount: 100,
           itemBuilder: (context, index) {
@@ -106,6 +106,7 @@ class FoldingCellWithListView extends StatelessWidget {
         return Container(
           width: MediaQuery.of(context).size.width,
           color: Colors.white,
+          // color: Colors.grey[50],
           padding: EdgeInsets.only(top: 10),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
