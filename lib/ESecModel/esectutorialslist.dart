@@ -3,8 +3,8 @@ import '../Welcome/esecwelcome.dart';
 import '../Tutorials/UrlLauncher/urllauncher.dart';
 import '../Tutorials/DropDownWithArray/dropdownwitharry.dart';
 import '../Widgets/FloatingRoundButton/roundmultibutton.dart';
-import '../Tutorials/SimpleFoldingCell/simpleFoldingCell.dart';
-import '../Tutorials/SimpleFoldingCell/foldingCellWithListView.dart';
+import '../Tutorials/FoldingCell/simpleFoldingCell.dart';
+import '../Tutorials/FoldingCell/foldingCellWithListView.dart';
 
 class ESecTutorialsList {
   String page;
