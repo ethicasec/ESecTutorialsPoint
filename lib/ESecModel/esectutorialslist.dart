@@ -5,6 +5,7 @@ import '../Tutorials/DropDownWithArray/dropdownwitharry.dart';
 import '../Widgets/FloatingRoundButton/roundmultibutton.dart';
 import '../Tutorials/FoldingCell/simpleFoldingCell.dart';
 import '../Tutorials/FoldingCell/foldingCellWithListView.dart';
+import '../Tutorials/HeroWidget/exherowidget.dart';
 
 class ESecTutorialsList {
   String page;
@@ -16,6 +17,9 @@ class ESecTutorialsList {
 class ESecTutorialRoutes extends StatelessWidget {
   List<ESecTutorialsList> esecTutList = [
     ESecTutorialsList(page: "Welcome", pageTitle: "Welcome to ESec"),
+    //
+    ESecTutorialsList(
+        page: "HeroWidgetAnimation", pageTitle: "Hero Widget Animation"),
     ESecTutorialsList(page: "EthicaUrlLauncher", pageTitle: "Url Launcher"),
     ESecTutorialsList(
         page: "DropDownWithArray", pageTitle: "DropDownWithArray "),
@@ -35,6 +39,8 @@ class ESecTutorialRoutes extends StatelessWidget {
         switch (page) {
           case "Welcome":
             return ESecWelcome(title: title);
+          case "HeroWidgetAnimation":
+            return HeroWidgetAnimation(title: title);
           case "EthicaUrlLauncher":
             return EthicaUrlLauncher(title: title);
           case "DropDownWithArray":
@@ -45,6 +51,7 @@ class ESecTutorialRoutes extends StatelessWidget {
             return SingleFoldingCell(title: title);
           case "FoldingCellWithListView":
             return FoldingCellWithListView(title: title);
+          //
           default:
             return ESecWelcome(title: "Ethica Security");
         }
