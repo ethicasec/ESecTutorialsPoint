@@ -56,8 +56,8 @@ class _AlertDialogPageState extends State<AlertDialogPage> {
         FlatButton(child: Text("Cancel"), onPressed: cancelOnPressed);
     //
     AlertDialog alertDialog = AlertDialog(
-      title: Text(title),
-      content: Text(text),
+      title: Center(child: Text(title)),
+      content: Container(height: 50, child: Center(child: Text(text))),
       actions: [
         cancelButton,
         remindButton,
