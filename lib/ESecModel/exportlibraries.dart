@@ -7,3 +7,4 @@ export '../Tutorials/HeroWidget/exherowidget.dart';
 export '../Tutorials/ActionChipWidget/actionChipWidget.dart';
 export '../Widgets/Toast/toastmsg.dart';
 export '../Widgets/FloatingRoundButton/roundmultibutton.dart';
+export '../Widgets/AlertDialogBox/alertdialogbox.dart';

@@ -13,6 +13,7 @@ class ESecTutorialRoutes extends StatelessWidget {
     ESecTutorialsList(page: "Welcome", pageTitle: "Welcome to ESec"),
     //
     ESecTutorialsList(page: "EthicaToastPage", pageTitle: "Toast Widget"),
+    ESecTutorialsList(page: "AlertDialogPage", pageTitle: "Alert Dialog Box"),
     ESecTutorialsList(
         page: "ActionChipWidgetEx", pageTitle: "Action Chip Widget"),
     ESecTutorialsList(
@@ -39,6 +40,8 @@ class ESecTutorialRoutes extends StatelessWidget {
           //
           case "EthicaToastPage":
             return EthicaToastPage(title: title);
+          case "AlertDialogPage":
+            return AlertDialogPage(title: title);
           case "ActionChipWidgetEx":
             return ActionChipWidgetEx(title: title);
           case "HeroWidgetAnimation":
