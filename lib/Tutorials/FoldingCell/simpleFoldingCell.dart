@@ -210,34 +210,34 @@ class SingleFoldingCell extends StatelessWidget {
     ]);
   }
 
-  Widget _buildInnerTopWidget() {
-    return Container(
-        color: Color(0xFFff9234),
-        alignment: Alignment.center,
-        child: Text("TITLE",
-            style: TextStyle(
-                color: Color(0xFF2e282a),
-                fontFamily: 'OpenSans',
-                fontSize: 20.0,
-                fontWeight: FontWeight.w800)));
-  }
+  // Widget _buildInnerTopWidget() {
+  //   return Container(
+  //       color: Color(0xFFff9234),
+  //       alignment: Alignment.center,
+  //       child: Text("TITLE",
+  //           style: TextStyle(
+  //               color: Color(0xFF2e282a),
+  //               fontFamily: 'OpenSans',
+  //               fontSize: 20.0,
+  //               fontWeight: FontWeight.w800)));
+  // }
 
-  Widget _buildInnerBottomWidget() {
-    return Container(
-      color: Color(0xFFecf2f9),
-      alignment: Alignment.bottomCenter,
-      child: Padding(
-        padding: EdgeInsets.only(bottom: 10),
-        child: FlatButton(
-          onPressed: () => _foldingCellKey?.currentState?.toggleFold(),
-          child: Text(
-            "Close",
-          ),
-          textColor: Colors.white,
-          color: Colors.indigoAccent,
-          splashColor: Colors.white.withOpacity(0.5),
-        ),
-      ),
-    );
-  }
+  // Widget _buildInnerBottomWidget() {
+  //   return Container(
+  //     color: Color(0xFFecf2f9),
+  //     alignment: Alignment.bottomCenter,
+  //     child: Padding(
+  //       padding: EdgeInsets.only(bottom: 10),
+  //       child: FlatButton(
+  //         onPressed: () => _foldingCellKey?.currentState?.toggleFold(),
+  //         child: Text(
+  //           "Close",
+  //         ),
+  //         textColor: Colors.white,
+  //         color: Colors.indigoAccent,
+  //         splashColor: Colors.white.withOpacity(0.5),
+  //       ),
+  //     ),
+  //   );
+  // }
 }

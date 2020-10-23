@@ -1,3 +1,5 @@
+import 'package:esectutorialspoint/Tutorials/ActionChipWidget/actionChipWidget.dart';
+import 'package:esectutorialspoint/Widgets/Toast/toastmsg.dart';
 import 'package:flutter/material.dart';
 import '../Welcome/esecwelcome.dart';
 import '../Tutorials/UrlLauncher/urllauncher.dart';
@@ -18,6 +20,9 @@ class ESecTutorialRoutes extends StatelessWidget {
   List<ESecTutorialsList> esecTutList = [
     ESecTutorialsList(page: "Welcome", pageTitle: "Welcome to ESec"),
     //
+    ESecTutorialsList(page: "EthicaToastPage", pageTitle: "Toast Widget"),
+    ESecTutorialsList(
+        page: "ActionChipWidgetEx", pageTitle: "Action Chip Widget"),
     ESecTutorialsList(
         page: "HeroWidgetAnimation", pageTitle: "Hero Widget Animation"),
     ESecTutorialsList(page: "EthicaUrlLauncher", pageTitle: "Url Launcher"),
@@ -39,6 +44,11 @@ class ESecTutorialRoutes extends StatelessWidget {
         switch (page) {
           case "Welcome":
             return ESecWelcome(title: title);
+          //
+          case "EthicaToastPage":
+            return EthicaToastPage(title: title);
+          case "ActionChipWidgetEx":
+            return ActionChipWidgetEx(title: title);
           case "HeroWidgetAnimation":
             return HeroWidgetAnimation(title: title);
           case "EthicaUrlLauncher":
