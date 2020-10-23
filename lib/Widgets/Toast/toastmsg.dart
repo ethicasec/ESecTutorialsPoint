@@ -13,50 +13,48 @@ class EthicaToastPage extends StatefulWidget {
 class _EthicaToastPageState extends State<EthicaToastPage> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Toast plugin example app'),
-        ),
-        body: Center(
-          child: Column(
-            children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: RaisedButton(
-                    child: Text('Show Short Duration Toast'),
-                    onPressed: () => showToast("Show Short Duration Toast")),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: RaisedButton(
-                    child: Text('Show Long Duration Toast'),
-                    onPressed: () => showToast("Show Long Duration Toast",
-                        duration: Toast.LENGTH_LONG)),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: RaisedButton(
-                    child: Text('Show Bottom Gravity  Toast'),
-                    onPressed: () => showToast("Show Bottom Gravity Toast",
-                        gravity: Toast.BOTTOM)),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: RaisedButton(
-                    child: Text('Show Center Gravity  Toast'),
-                    onPressed: () => showToast("Show Center Gravity  Toast",
-                        gravity: Toast.CENTER)),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: RaisedButton(
-                    child: Text('Show Top Gravity  Toast'),
-                    onPressed: () => showToast("Show Top Gravity Toast",
-                        gravity: Toast.TOP)),
-              ),
-            ],
-          ),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(widget.title.toString()),
+      ),
+      body: Center(
+        child: Column(
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: RaisedButton(
+                  child: Text('Show Short Duration Toast'),
+                  onPressed: () => showToast("Show Short Duration Toast")),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: RaisedButton(
+                  child: Text('Show Long Duration Toast'),
+                  onPressed: () => showToast("Show Long Duration Toast",
+                      duration: Toast.LENGTH_LONG)),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: RaisedButton(
+                  child: Text('Show Bottom Gravity  Toast'),
+                  onPressed: () => showToast("Show Bottom Gravity Toast",
+                      gravity: Toast.BOTTOM)),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: RaisedButton(
+                  child: Text('Show Center Gravity  Toast'),
+                  onPressed: () => showToast("Show Center Gravity  Toast",
+                      gravity: Toast.CENTER)),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: RaisedButton(
+                  child: Text('Show Top Gravity  Toast'),
+                  onPressed: () =>
+                      showToast("Show Top Gravity Toast", gravity: Toast.TOP)),
+            ),
+          ],
         ),
       ),
     );
