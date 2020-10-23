@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:esectutorialspoint/esechomepage.dart';
 import 'package:flutter/material.dart';
 
@@ -25,17 +27,15 @@ class _AlertDialogPageState extends State<AlertDialogPage> {
               child: RaisedButton(
                 child: Text('Show Alert Dialog Box'),
                 onPressed: () => showAlertDialogBox(
-                  context,
-                  "Title",
-                  "Your Msg Here i.e goto home page",
-                  okOnPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (BuildContext context) => ESecHomePage()));
-                  },
-                  cancelOnPressed: () {
-                    Navigator.pop(context);
-                  },
-                ),
+                    context, "Title", "Your Msg Here i.e goto home page",
+                    okOnPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (BuildContext context) => ESecHomePage()));
+                }, cancelOnPressed: () {
+                  Navigator.pop(context);
+                }, exitOnPressed: () {
+                  exit(0);
+                }),
               ),
             ),
           ],
@@ -47,11 +47,13 @@ class _AlertDialogPageState extends State<AlertDialogPage> {
   void showAlertDialogBox(BuildContext context, String title, String text,
       {Function remindOnPressed,
       Function okOnPressed,
+      Function exitOnPressed,
       Function cancelOnPressed}) {
     //
     Widget remindButton =
         FlatButton(child: Text("Remind me later"), onPressed: remindOnPressed);
     Widget okButton = FlatButton(child: Text("OK"), onPressed: okOnPressed);
+    Widget exitButton = FlatButton(child: Text("OK"), onPressed: okOnPressed);
     Widget cancelButton =
         FlatButton(child: Text("Cancel"), onPressed: cancelOnPressed);
     //
@@ -59,6 +61,7 @@ class _AlertDialogPageState extends State<AlertDialogPage> {
       title: Center(child: Text(title)),
       content: Container(height: 50, child: Center(child: Text(text))),
       actions: [
+        exitButton,
         cancelButton,
         remindButton,
         okButton,
