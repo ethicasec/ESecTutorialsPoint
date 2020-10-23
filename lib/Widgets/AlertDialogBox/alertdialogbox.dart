@@ -1,3 +1,4 @@
+import 'package:esectutorialspoint/esechomepage.dart';
 import 'package:flutter/material.dart';
 
 class AlertDialogPage extends StatefulWidget {
@@ -26,9 +27,10 @@ class _AlertDialogPageState extends State<AlertDialogPage> {
                 onPressed: () => showAlertDialogBox(
                   context,
                   "Title",
-                  "Your Msg Here",
+                  "Your Msg Here i.e goto home page",
                   okOnPressed: () {
-                    Navigator.pop(context);
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (BuildContext context) => ESecHomePage()));
                   },
                   cancelOnPressed: () {
                     Navigator.pop(context);
@@ -46,12 +48,13 @@ class _AlertDialogPageState extends State<AlertDialogPage> {
       {Function remindOnPressed,
       Function okOnPressed,
       Function cancelOnPressed}) {
+    //
     Widget remindButton =
         FlatButton(child: Text("Remind me later"), onPressed: remindOnPressed);
     Widget okButton = FlatButton(child: Text("OK"), onPressed: okOnPressed);
     Widget cancelButton =
         FlatButton(child: Text("Cancel"), onPressed: cancelOnPressed);
-
+    //
     AlertDialog alertDialog = AlertDialog(
       title: Text(title),
       content: Text(text),
