@@ -1,7 +1,7 @@
 import 'dart:io';
-
 import 'package:esectutorialspoint/esechomepage.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class AlertDialogPage extends StatefulWidget {
   AlertDialogPage({Key key, this.title}) : super(key: key);
@@ -34,7 +34,15 @@ class _AlertDialogPageState extends State<AlertDialogPage> {
                 }, cancelOnPressed: () {
                   Navigator.pop(context);
                 }, exitOnPressed: () {
-                  exit(0);
+                  // exit(0);
+                  // Not recommand b'coz it terminate dart process directly and may be crash the app
+                  // SystemNavigator.pop();
+                  Future.delayed(const Duration(milliseconds: 1000), () {
+                    SystemChannels.platform.invokeMethod('SystemNavigator.pop');
+                  });
+                  // Future.delayed(Duration(seconds: 1), () {
+                  //   exit(0);
+                  // });
                 }),
               ),
             ),
@@ -45,15 +53,14 @@ class _AlertDialogPageState extends State<AlertDialogPage> {
   }
 
   void showAlertDialogBox(BuildContext context, String title, String text,
-      {Function remindOnPressed,
-      Function okOnPressed,
+      {Function okOnPressed,
       Function exitOnPressed,
       Function cancelOnPressed}) {
     //
-    Widget remindButton =
-        FlatButton(child: Text("Remind me later"), onPressed: remindOnPressed);
+
     Widget okButton = FlatButton(child: Text("OK"), onPressed: okOnPressed);
-    Widget exitButton = FlatButton(child: Text("OK"), onPressed: okOnPressed);
+    Widget exitButton =
+        FlatButton(child: Text("Exit"), onPressed: exitOnPressed);
     Widget cancelButton =
         FlatButton(child: Text("Cancel"), onPressed: cancelOnPressed);
     //
@@ -63,7 +70,6 @@ class _AlertDialogPageState extends State<AlertDialogPage> {
       actions: [
         exitButton,
         cancelButton,
-        remindButton,
         okButton,
       ],
     );
