@@ -26,17 +26,17 @@ class _AwesomeDialogWidgetState extends State<AwesomeDialogWidget> {
             child: Column(
               children: <Widget>[
                 AnimatedButton(
-                  text: 'Info Dialog fixed width and sqare buttons',
+                  text: 'Info Dialog With Fixed Width & Sqare Buttons',
                   color: Colors.cyan,
                   pressEvent: () {
                     AwesomeDialog(
                       context: context,
-                      width: 280,
+                      width: 350,
                       buttonsBorderRadius: BorderRadius.all(Radius.circular(2)),
                       headerAnimationLoop: false,
                       animType: AnimType.BOTTOMSLIDE,
-                      title: 'INFO',
-                      desc: 'Dialog description here...',
+                      title: 'Fix Dialog Square Btn',
+                      desc: 'Dialog description',
                       btnCancelOnPress: () {},
                       btnOkOnPress: () {},
                     )..show();
@@ -46,17 +46,41 @@ class _AwesomeDialogWidgetState extends State<AwesomeDialogWidget> {
                   height: 16,
                 ),
                 AnimatedButton(
-                  text: 'Info Dialog Without buttons',
+                  text: 'Info Dialog Without Button',
                   color: Colors.cyan,
                   pressEvent: () {
                     AwesomeDialog(
                       context: context,
                       headerAnimationLoop: false,
                       animType: AnimType.BOTTOMSLIDE,
-                      title: 'INFO',
-                      desc:
-                          'Lorem ipsum dolor sit amet consectetur adipiscing elit eget ornare tempus, vestibulum sagittis rhoncus felis hendrerit lectus ultricies duis vel, id morbi cum ultrices tellus metus dis ut donec. Ut sagittis viverra venenatis eget euismod faucibus odio ligula phasellus,',
+                      title: 'Info Dialog Without Button',
+                      desc: 'Dialog description',
                     )..show();
+                  },
+                ),
+                SizedBox(
+                  height: 16,
+                ),
+                AnimatedButton(
+                  text: 'Info Dialog',
+                  color: Colors.blue[600],
+                  pressEvent: () {
+                    AwesomeDialog(
+                        context: context,
+                        animType: AnimType.LEFTSLIDE,
+                        headerAnimationLoop: false,
+                        dialogType: DialogType.INFO,
+                        title: 'Info Dialog',
+                        desc: 'Dialog description',
+                        btnOkOnPress: () {
+                          debugPrint('OnClcik');
+                        },
+                        btnOkIcon: Icons.check_circle,
+                        btnOkColor: Colors.blue[600],
+                        onDissmissCallback: () {
+                          debugPrint('Dialog Dissmiss from callback');
+                        })
+                      ..show();
                   },
                 ),
                 SizedBox(
@@ -71,9 +95,8 @@ class _AwesomeDialogWidgetState extends State<AwesomeDialogWidget> {
                         dialogType: DialogType.WARNING,
                         headerAnimationLoop: false,
                         animType: AnimType.TOPSLIDE,
-                        title: 'Warning',
-                        desc:
-                            'Dialog description here..................................................',
+                        title: 'Warning Dialog',
+                        desc: 'Dialog description',
                         btnCancelOnPress: () {},
                         btnOkOnPress: () {})
                       ..show();
@@ -91,9 +114,8 @@ class _AwesomeDialogWidgetState extends State<AwesomeDialogWidget> {
                         dialogType: DialogType.ERROR,
                         animType: AnimType.RIGHSLIDE,
                         headerAnimationLoop: false,
-                        title: 'Error',
-                        desc:
-                            'Dialog description here..................................................',
+                        title: 'Error Dialog',
+                        desc: 'Dialog description',
                         btnOkOnPress: () {},
                         btnOkIcon: Icons.cancel,
                         btnOkColor: Colors.red)
@@ -112,9 +134,8 @@ class _AwesomeDialogWidgetState extends State<AwesomeDialogWidget> {
                         animType: AnimType.LEFTSLIDE,
                         headerAnimationLoop: false,
                         dialogType: DialogType.SUCCES,
-                        title: 'Succes',
-                        desc:
-                            'Dialog description here..................................................',
+                        title: 'Success Dialog',
+                        desc: 'Dialog description',
                         btnOkOnPress: () {
                           debugPrint('OnClcik');
                         },
@@ -136,9 +157,8 @@ class _AwesomeDialogWidgetState extends State<AwesomeDialogWidget> {
                       context: context,
                       headerAnimationLoop: false,
                       dialogType: DialogType.NO_HEADER,
-                      title: 'No Header',
-                      desc:
-                          'Dialog description here..................................................',
+                      title: 'No Header Dialog',
+                      desc: 'Dialog description',
                       btnOkOnPress: () {
                         debugPrint('OnClcik');
                       },
@@ -159,7 +179,7 @@ class _AwesomeDialogWidgetState extends State<AwesomeDialogWidget> {
                       dialogType: DialogType.INFO,
                       body: Center(
                         child: Text(
-                          'If the body is specified, then title and description will be ignored, this allows to further customize the dialogue.',
+                          'If body is specified, then title and description will be ignored, this allows to further customize the dialogue.',
                           style: TextStyle(fontStyle: FontStyle.italic),
                         ),
                       ),
@@ -203,7 +223,7 @@ class _AwesomeDialogWidgetState extends State<AwesomeDialogWidget> {
                       title: 'Continue to pay?',
                       padding: const EdgeInsets.all(16.0),
                       desc:
-                          'Please confirm that you will pay 3000 INR within 30 mins. Creating orders without paying will create penalty charges, and your account may be disabled.',
+                          'Please confirm that you will pay 3000 INR within 30 mins',
                       btnCancelOnPress: () {},
                       btnOkOnPress: () {},
                     ).show();
@@ -270,6 +290,7 @@ class _AwesomeDialogWidgetState extends State<AwesomeDialogWidget> {
                             ),
                             AnimatedButton(
                                 text: 'Close',
+                                icon: Icons.cancel,
                                 pressEvent: () {
                                   dialog.dissmiss();
                                 })
