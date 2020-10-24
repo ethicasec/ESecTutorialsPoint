@@ -11,7 +11,9 @@ class ESecTutorialsList {
 class ESecTutorialRoutes extends StatelessWidget {
   List<ESecTutorialsList> esecTutList = [
     ESecTutorialsList(page: "Welcome", pageTitle: "Welcome to ESec"),
-    //
+    //''
+    ESecTutorialsList(
+        page: "AwesomeDialogWidget", pageTitle: "Awesome Dialog Example"),
     ESecTutorialsList(page: "EthicaToastPage", pageTitle: "Toast Widget"),
     ESecTutorialsList(page: "AlertDialogPage", pageTitle: "Alert Dialog Box"),
     ESecTutorialsList(
@@ -38,6 +40,8 @@ class ESecTutorialRoutes extends StatelessWidget {
           case "Welcome":
             return ESecWelcome(title: title);
           //
+          case "AwesomeDialogWidget":
+            return AwesomeDialogWidget(title: title);
           case "EthicaToastPage":
             return EthicaToastPage(title: title);
           case "AlertDialogPage":

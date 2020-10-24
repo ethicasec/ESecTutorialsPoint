@@ -1,10 +1,11 @@
 export '../Welcome/esecwelcome.dart';
-export '../Tutorials/UrlLauncher/urllauncher.dart';
+export '../Tutorials/UrlLauncher/urlLauncher.dart';
 export '../Tutorials/DropDownWithArray/dropdownwitharry.dart';
 export '../Tutorials/FoldingCell/simpleFoldingCell.dart';
 export '../Tutorials/FoldingCell/foldingCellWithListView.dart';
-export '../Tutorials/HeroWidget/exherowidget.dart';
+export '../Tutorials/HeroWidget/exheroWidget.dart';
 export '../Tutorials/ActionChipWidget/actionChipWidget.dart';
 export '../Widgets/Toast/toastmsg.dart';
 export '../Widgets/FloatingRoundButton/roundmultibutton.dart';
 export '../Widgets/AlertDialogBox/alertdialogbox.dart';
+export '../Widgets/AwesomeDialog/awesomeDialogBox.dart';
