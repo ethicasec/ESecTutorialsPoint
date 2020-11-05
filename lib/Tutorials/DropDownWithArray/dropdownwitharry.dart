@@ -29,13 +29,13 @@ class _DropDownWithArrayState extends State<DropDownWithArray> {
         centerTitle: true,
       ),
       body: Container(
-        color: Colors.white,
+        // color: Colors.white,
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               DropdownButton(
-                dropdownColor: Colors.cyan[50],
+                dropdownColor: Colors.cyan,
                 items: _itemsdata
                     .map((data) => DropdownMenuItem<String>(
                           child: Text(data.item),

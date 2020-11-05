@@ -1,3 +1,4 @@
+import 'package:esectutorialspoint/Tutorials/ThemeDemo/lightDarkThemeDemo.dart';
 import 'package:flutter/material.dart';
 import 'exportlibraries.dart';
 
@@ -11,7 +12,8 @@ class ESecTutorialsList {
 class ESecTutorialRoutes extends StatelessWidget {
   List<ESecTutorialsList> esecTutList = [
     ESecTutorialsList(page: "Welcome", pageTitle: "Welcome to ESec"),
-    //''
+    //
+    ESecTutorialsList(page: "DarkThemeDemo", pageTitle: "Dark Theme Demo"),
     ESecTutorialsList(
         page: "AwesomeDialogWidget", pageTitle: "Awesome Dialog Example"),
     ESecTutorialsList(page: "EthicaToastPage", pageTitle: "Toast Widget"),
@@ -40,6 +42,8 @@ class ESecTutorialRoutes extends StatelessWidget {
           case "Welcome":
             return ESecWelcome(title: title);
           //
+          case "DarkThemeDemo":
+            return DarkThemeDemo(title: title);
           case "AwesomeDialogWidget":
             return AwesomeDialogWidget(title: title);
           case "EthicaToastPage":
