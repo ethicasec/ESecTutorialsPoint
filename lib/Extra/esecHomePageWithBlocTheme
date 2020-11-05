@@ -1,7 +1,6 @@
-import 'package:esectutorialspoint/Utils/themeProvider.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'ESecModel/esectutorialslist.dart';
+import 'mybloc.dart';
 
 // ignore: must_be_immutable
 class ESecHomePage extends StatefulWidget {
@@ -23,15 +22,10 @@ class _ESecHomePageState extends State<ESecHomePage> {
       drawer: Drawer(
         child: ListView(
           children: [
-            Consumer<ThemeNotifier>(
-              builder: (context, notifier, child) => SwitchListTile(
-                title: Text("Dark Theme"),
-                value: notifier.darkTheme,
-                onChanged: (val) {
-                  notifier.toggleTheme();
-                },
-              ),
-            ),
+            ListTile(
+              title: Text("Dark Theme"),
+              trailing: darkThemeSwitch(widget.themeData),
+            )
           ],
         ),
       ),
@@ -66,6 +60,13 @@ class _ESecHomePageState extends State<ESecHomePage> {
           ),
         )),
       ),
+    );
+  }
+
+  Widget darkThemeSwitch(data) {
+    return Switch(
+      value: data,
+      onChanged: bloc.changeTheme,
     );
   }
 }

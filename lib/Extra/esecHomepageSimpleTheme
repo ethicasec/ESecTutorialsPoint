@@ -1,0 +1,91 @@
+import 'package:flutter/material.dart';
+import 'ESecModel/esectutorialslist.dart';
+
+// ignore: must_be_immutable
+class ESecHomePage extends StatefulWidget {
+  ESecHomePage({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  _ESecHomePageState createState() => _ESecHomePageState();
+}
+
+bool _isDark = false;
+
+ThemeData _darkTheme = ThemeData(
+  accentColor: Colors.red,
+  brightness: Brightness.dark,
+  primaryColor: Colors.amber,
+);
+
+ThemeData _lightTheme = ThemeData(
+    accentColor: Colors.pink,
+    brightness: Brightness.light,
+    primaryColor: Colors.blue);
+
+class _ESecHomePageState extends State<ESecHomePage> {
+  ESecTutorialRoutes _tutorials = ESecTutorialRoutes();
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: _isDark ? _darkTheme : _lightTheme,
+      title: 'Material App',
+      home: Scaffold(
+        drawer: Drawer(
+          child: ListView(
+            children: [
+              ListTile(
+                title: Text("Dark Theme"),
+                trailing: darkThemeSwitch(),
+              )
+            ],
+          ),
+        ),
+        appBar: AppBar(
+          centerTitle: true,
+          title: Text("Ethicas Tutorials Point"),
+          actions: [],
+        ),
+        body: Padding(
+          padding: const EdgeInsets.all(5.0),
+          child: Container(
+              child: Center(
+            child: ListView.builder(
+              itemCount: _tutorials.esecTutList.length != null
+                  ? _tutorials.esecTutList.length
+                  : 0,
+              itemBuilder: (context, index) {
+                var data = _tutorials.esecTutList[index];
+                return Card(
+                  elevation: 2,
+                  child: ListTile(
+                    leading: FlutterLogo(),
+                    title: Text(
+                        "Tutorial-${index + 1}: ${data.pageTitle.toString()}"),
+                    onTap: () {
+                      _tutorials.switchToTutePage(
+                          context, data.page, data.pageTitle);
+                    },
+                  ),
+                );
+              },
+            ),
+          )),
+        ),
+      ),
+    );
+  }
+
+  Widget darkThemeSwitch() {
+    return Switch(
+        value: _isDark,
+        onChanged: (toggle) {
+          setState(() {
+            _isDark = toggle;
+            print(_isDark);
+          });
+        });
+  }
+}

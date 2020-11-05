@@ -1,0 +1,37 @@
+import 'package:flutter/material.dart';
+import 'esechomepage.dart';
+import 'mybloc.dart';
+
+void main() {
+  runApp(
+    new EthicaHomePage(),
+  );
+}
+
+ThemeData _darkTheme = ThemeData(
+  accentColor: Colors.red,
+  brightness: Brightness.dark,
+  primaryColor: Colors.amber,
+  cardColor: Colors.grey[800],
+);
+
+ThemeData _lightTheme = ThemeData(
+    accentColor: Colors.pink,
+    brightness: Brightness.light,
+    primaryColor: Colors.blue);
+
+class EthicaHomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return StreamBuilder(
+      initialData: false,
+      stream: bloc.darkThemeEnabled,
+      builder: (context, snapshot) => MaterialApp(
+        theme: snapshot.data ? _darkTheme : _lightTheme,
+        title: 'Material App',
+        debugShowCheckedModeBanner: false,
+        home: ESecHomePage(themeData: snapshot.data),
+      ),
+    );
+  }
+}
